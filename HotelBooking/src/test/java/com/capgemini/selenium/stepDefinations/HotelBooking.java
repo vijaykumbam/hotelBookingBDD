@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 import com.capgemini.selenium.pom.HotelBookingPOM;
+
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 
@@ -54,6 +56,11 @@ public class HotelBooking {
 	   driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.getPageSource().contentEquals("Booking Completed!");
 		System.out.println("Yeah your booking is success !");
+		
+	}
+	
+	@After
+	public void afterMethod() {
 		driver.close();
 		driver.quit();
 	}

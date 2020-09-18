@@ -8,6 +8,7 @@ import org.openqa.selenium.opera.OperaDriver;
 
 import com.capgemini.selenium.pom.HotelLoginPOM;
 
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.*;
 
@@ -57,9 +58,13 @@ public class HotelLogin {
 		alert.accept();
 	   // String msg = driver.findElement(By.id("userErrMsg")).getText();
 	   // System.out.println(msg);
-	    driver.close();
-	    driver.quit();
 		
+	}
+	
+	@After
+	public void afterMethod() {
+		driver.close();
+		driver.quit();
 	}
 
 }
